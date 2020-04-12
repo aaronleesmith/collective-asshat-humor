@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+setTimeout(()=> {
+  window.scrollTo(0, 1);
+}, 1000)
 ReactDOM.render(
   <React.StrictMode>
     <App />
