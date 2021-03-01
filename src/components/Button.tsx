@@ -1,12 +1,37 @@
-import React from 'react';
-import clsx from 'clsx';
+import React from "react";
+import clsx from "clsx";
 
-export const Button: React.FC<React.HTMLAttributes<HTMLDivElement> & {
-  type: 'white' | 'black'
-}> = ({ children, className, type, ...other }) => {
+const Button: React.FC<
+  React.ButtonHTMLAttributes<any> & { inverted?: boolean }
+> = ({ children, inverted = false, className, ...buttonProps }) => {
   return (
-    <div {...other} className={clsx(['game-button', type, className])}>
+    <button
+      className={clsx([
+        inverted && "text-black", 
+        !inverted && "text-white",
+
+        inverted && "bg-white",
+        !inverted && "bg-black",
+
+        "border-black",
+        "border-solid",
+        "border-2",
+
+        "uppercase",
+        "rounded-lg",
+        "tracking-wider",
+        "font-extrabold",
+        "text-2xl",
+        "py-2",
+        "min-w-full",
+        className
+      
+      ])}
+      {...buttonProps}
+    >
       {children}
-    </div>
-  )
-}
+    </button>
+  );
+};
+
+export default Button;
