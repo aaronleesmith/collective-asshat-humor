@@ -3,31 +3,40 @@ import clsx from "clsx";
 import Button from "../Button";
 import Headline from "../Headline";
 import SubHeadline from "../SubHeadline";
+import GameHeader from "../GameHeader";
+import CCDisclaimer from "../CCDisclaimer";
+import GameContentContainer from "../layout/GameContentContainer";
 
 /**
  * Renders the home screen with options to join or host a game.
  */
 export const Home = () => {
   return (
-    <div className={clsx(["flex", "px-10", "flex-col"])}>
-      <Headline className="mt-10">
-        Collective
-        <br />
-        Asshat
-        <br />
-        Humor
-      </Headline>
+    <>
+      <GameHeader showHelp={false} showTitle={false} />
 
-      <SubHeadline className="mt-5">An online group card game.</SubHeadline>
+      <GameContentContainer>
+        <Headline className="mt-10">
+          Collective
+          <br />
+          Asshat
+          <br />
+          Humor
+        </Headline>
 
-      <div
-        id="game-start-options"
-        className={clsx(["mt-20", "flex", "flex-col", "space-y-6"])}
-      >
-        <Button>Join</Button>
-        <Button inverted>Host</Button>
-      </div>
-    </div>
+        <SubHeadline className="mt-5">An online group card game.</SubHeadline>
+
+        <div
+          id="game-start-options"
+          className={clsx(["mt-20", "flex", "flex-col", "space-y-6"])}
+        >
+          <Button>Join</Button>
+          <Button inverted>Host</Button>
+        </div>
+      </GameContentContainer>
+
+      <CCDisclaimer />
+    </>
   );
 };
 
