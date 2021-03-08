@@ -8,7 +8,7 @@ import 'swiper/swiper-bundle.min.css';
 
 export const Hand: React.FC = ({ children }) => {
   return (
-    <div className='flex w-full h-96'>
+    <div className='flex w-full h-96 -mx-10'>
       <Swiper
         slidesPerView={1.2}
         centeredSlides={true}
@@ -16,11 +16,14 @@ export const Hand: React.FC = ({ children }) => {
         
         loop
       >
-      { (Array.isArray(children) ? children : [children]).map(child => (
+      { React.Children.toArray(children).map(child => (
         <SwiperSlide >
-          {child}
+          {({isActive}: {isActive: boolean})=> (
+            React.cloneElement(child as any, { isVisible: isActive })
+          )}
+          
         </SwiperSlide>
-      ))}
+      )) }
     </Swiper>
     </div>
     

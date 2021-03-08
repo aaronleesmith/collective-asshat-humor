@@ -1,8 +1,9 @@
 import React from "react";
 import clsx from "clsx";
 
-export const GameContentContainer: React.FC<React.HTMLAttributes<HTMLDivElement> & { inverted?: boolean }> = ({
+export const GameContentContainer: React.FC<React.HTMLAttributes<HTMLDivElement> & { inverted?: boolean, edgeToEdge?: boolean }> = ({
   children,
+  edgeToEdge = false,
   inverted = false,
   className,
   ...rest
@@ -12,7 +13,8 @@ export const GameContentContainer: React.FC<React.HTMLAttributes<HTMLDivElement>
       className={clsx([
         className,
         "flex",
-        "px-10",
+        
+        !edgeToEdge && "px-10",
         "flex-col",
         "flex-grow",
         inverted && "text-white",

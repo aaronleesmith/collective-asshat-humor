@@ -16,13 +16,16 @@ export const WhiteCardTurn: React.FC = ({}) => {
       <GameTitleBar>
         It's Kirk's turn... they might be a bit slow if you get my meaning.
       </GameTitleBar>
-      <GameContentContainer inverted className='space-y-2'>
+      <GameContentContainer inverted edgeToEdge={true} className='space-y-2'>
         <Hand>
           <Card>Card 1</Card>
           <Card>Card 2</Card>
         </Hand>
         
-        <Button inverted>Select</Button>
+        <div className='px-10 w-full'>
+          <Button inverted>Select</Button>
+        </div>
+        
       </GameContentContainer>
     </>
   );

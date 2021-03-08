@@ -25,6 +25,7 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('tailwind-filter-utilities')
+    require('tailwind-filter-utilities'),
+    require('tailwindcss-container-break')
   ]
 }
