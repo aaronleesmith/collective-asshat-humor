@@ -11,12 +11,15 @@ module.exports = {
     minHeight: {
       '1/2': '50%'
     },
+    minWidth: {
+      '3/4': '75%'
+    },
     borderWidth: {
       '3': '3px'
     },
     extend: {
-      
-    },
+    
+    }
   },
   variants: {
     extend: {},

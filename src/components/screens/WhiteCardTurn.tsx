@@ -7,7 +7,8 @@ import SubHeadline from "../SubHeadline";
 import TextField from "../TextField";
 import clsx from "clsx";
 import { GameTitleBar } from '../GameTitleBar';
-
+import Card from '../cards/Card';
+import Hand from '../cards/Hand';
 export const WhiteCardTurn: React.FC = ({}) => {
   return (
     <>
@@ -15,8 +16,13 @@ export const WhiteCardTurn: React.FC = ({}) => {
       <GameTitleBar>
         It's Kirk's turn... they might be a bit slow if you get my meaning.
       </GameTitleBar>
-      <GameContentContainer inverted>
+      <GameContentContainer inverted className='space-y-2'>
+        <Hand>
+          <Card>Card 1</Card>
+          <Card>Card 2</Card>
+        </Hand>
         
+        <Button inverted>Select</Button>
       </GameContentContainer>
     </>
   );
